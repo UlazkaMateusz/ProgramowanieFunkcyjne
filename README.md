@@ -6,9 +6,9 @@ V - zmienna
 (λV.E) - abstrakcja
 
 ## Nawiasy
-(((E1E2)...)EN) -> E1E2...EN
-(λV.(E1E2...EN)) -> λV.E1E2...EN
-(λV.(...(λN.E))) -> λV. ... λN.E
+(((E1E2)...)EN) -> E1E2...EN 
+(λV.(E1E2...EN)) -> λV.E1E2...EN 
+(λV.(...(λN.E))) -> λV. ... λN.E 
 
 ## Podstawienia
 E[E'/V] -> W wyrażeniu E za V podstawiamy E'
