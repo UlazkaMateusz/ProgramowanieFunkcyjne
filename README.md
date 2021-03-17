@@ -28,7 +28,7 @@ E[E'/V] -> W wyrażeniu E za V podstawiamy E'
 * LET not = λz.z T F
 * LET E -> G|H = EGH
 * LET and = λxy.x->x|F
-* LET or 
+* LET or = λxy.x->T|y 
 * LET 0 = λfx.x
 * LET 1 = λfx.fx
 * LET 2 = λfx.f(fx)
