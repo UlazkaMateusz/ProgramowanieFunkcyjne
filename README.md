@@ -36,3 +36,12 @@ E[E'/V] -> W wyrażeniu E za V podstawiamy E'
 * LET suc = λnfx.nf(fx)
 * LET add = λmnfx.mf(nfx)
 * LET iszero = λn.n(λx.F)T
+
+## 6 magicznych definicji
+E   |   E[E'/V]
+1. V  |   E'
+1. V', V' != V  |   V
+1. E1E2 |   E1[E'/V] E2[E'/V]
+1. λV.E1    |   E1[E'/V]
+1. λV'.E1, V'!=V, V' nie jest wolne w E'    |   λV'.E1[E'/V]
+1. λV'.E1, V'!=V, V' jest wolne w E'    |   λV''.E1[V''/V'][E'/V]
