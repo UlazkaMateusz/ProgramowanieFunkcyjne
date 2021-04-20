@@ -8,7 +8,7 @@ a[λa.ax/a] =1= λa.ax
 
 
 Zadanie 2 ((λa.ay)(λa.za)) [λa.ax/a]
-((λa.ay)(λa.za)) [λa.ax/a] = (λa.ay)[λa.ax/a] (λa.za)[λa.ax/a] =  (λa.(λa.ax)y λa.z(λa.ax))
+((λa.ay)(λa.za)) [λa.ax/a] = (λa.ay)[λa.ax/a] (λa.za)[λa.ax/a] =  (λa.(λa.ax)y) (λa.z(λa.ax))
 
 (λa.ay)[λa.ax/a] = (λa.(ay)[λa.ax/a]) = λa.(λa.ax)y
 
