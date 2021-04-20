@@ -36,6 +36,14 @@ E[E'/V] -> W wyrażeniu E za V podstawiamy E'
 * LET suc = λnfx.nf(fx)
 * LET add = λmnfx.mf(nfx)
 * LET iszero = λn.n(λx.F)T
+* LET LET [E1, E2] = λf.f E1 E2
+* LET fst = λp.p T
+* LET snd = λp.pF
+* LET curry = λfxy.f[x,y]
+* LET uncurry = Lfp.(f(fst p)(snd p))
+* LET mult n m = issero n -> 0 | add m (mult (pre n) m)
+* LET pow n m = iszero m -> 1 | mult n (pow n (pre m))
+* LET imp x y = λxy. x -> y | T
 
 ## 6 magicznych definicji
 E   |   E[E'/V]
