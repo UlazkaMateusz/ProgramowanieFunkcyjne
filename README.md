@@ -36,7 +36,7 @@ E[E'/V] -> W wyrażeniu E za V podstawiamy E'
 * LET suc = λnfx.nf(fx)
 * LET add = λmnfx.mf(nfx)
 * LET iszero = λn.n(λx.F)T
-* LET LET [E1, E2] = λf.f E1 E2
+* LET [E1, E2] = λf.f E1 E2
 * LET fst = λp.p T
 * LET snd = λp.pF
 * LET pre n = λnfx.snd (n(prefn f)[T, x])
