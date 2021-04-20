@@ -39,6 +39,8 @@ E[E'/V] -> W wyrażeniu E za V podstawiamy E'
 * LET LET [E1, E2] = λf.f E1 E2
 * LET fst = λp.p T
 * LET snd = λp.pF
+* LET pre n = λnfx.snd (n(prefn f)[true, x])
+* LET pref n = λfp.[false,(fst p ->snd p|(f(snd p)))]
 * LET curry = λfxy.f[x,y]
 * LET uncurry = Lfp.(f(fst p)(snd p))
 * LET mult n m = issero n -> 0 | add m (mult (pre n) m)
