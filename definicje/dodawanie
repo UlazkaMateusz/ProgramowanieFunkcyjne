@@ -1,0 +1,16 @@
+1. add 0 0 
+LET 0 = λfx.x
+LET 1 = λfx.fx
+LET 2 = λfx.f(fx)
+LET 3 = λfx.f(f(fx))
+LET add = λmnfx.mf(nfx)
+
+add 0 0 = λmnfx.mf(nfx) (λfx.x) (λfx.x) = λfx.(λfx.x)f((λfx.x)fx) = λfx.(λfx.x)fx = λfx.x
+
+2. add 1 0
+
+add 1 0 = λmnfx.mf(nfx) (λfx.fx) (λfx.x) = λfx.(λfx.fx)f((λfx.x)fx) = λfx.(λfx.fx)fx = λfx.fx
+
+3. add 2 0
+
+add 2 0 = λmnfx.mf(nfx) (λfx.f(fx)) (λfx.x) = λfx.(λfx.f(fx))f((λfx.x)fx) = λfx.(λfx.f(fx))f(x) = λfx.(λfx.f(fx))fx = λfx.f(fx)

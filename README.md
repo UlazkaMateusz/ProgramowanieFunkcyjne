@@ -25,7 +25,7 @@ E[E'/V] -> W wyrażeniu E za V podstawiamy E'
 ## Definicje
 * LET true = λxy.x
 * LET false = λx.y.y
-* LET not = λz.z T F
+* LET not = λz.z F T
 * LET E -> G|H = EGH
 * LET and = λxy.x->x|F
 * LET or = λxy.x->T|y 

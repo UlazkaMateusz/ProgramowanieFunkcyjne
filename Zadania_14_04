@@ -1,0 +1,66 @@
+Zadanie 1 (a (λx.za)) [λa.ax/a]
+
+(a (λx.za)) [λa.ax/a] =3= a[λa.ax/a] (λx.za)[λa.ax/a] = ((λa.ax) (λf.(z λa.ax))
+a[λa.ax/a] =1= λa.ax
+(λx.za)[λa.ax/a] =6= (λf.(za)[f/x][λa.ax/a]) = λf.(z λa.ax)
+(za)[f/x][λa.ax/a] = (za)[λa.ax/a] = z[λa.ax/a] a[λa.ax/a] = z λa.ax
+(za)[f/x] = za
+
+
+Zadanie 2 ((λa.ay)(λa.za)) [λa.ax/a]
+((λa.ay)(λa.za)) [λa.ax/a] = (λa.ay)[λa.ax/a] (λa.za)[λa.ax/a] =  (λa.(λa.ax)y λa.z(λa.ax))
+
+(λa.ay)[λa.ax/a] = (λa.(ay)[λa.ax/a]) = λa.(λa.ax)y
+
+(λa.za)[λa.ax/a] = (λa.(za)[λa.ax/a]) = λa.z(λa.ax) 
+
+Zadanie 3 ((λab.ab)(λb.b)(λz.z)) [λz.z/a]
+((λab.ab)(λb.b)(λz.z)) [λz.z/a] = ((λab.ab)(λb.b))[λz.z/a] (λz.z)[λz.z/a] = (λab.ab)[λz.z/a] (λb.b)[λz.z/a] (λz.z)[λz.z/a] = ((λab.ab) (λb.b) (λz.z))
+
+(λab.ab)[λz.z/a] = (λa.(λb.(ab))[λz.z/a]) = λab.ab
+
+(λb.b)[λz.z/a] = λb.b[λz.z/a] = λb.b
+
+(λz.z)[λz.z/a] = λf.z[λz.z/a] = λz.z
+
+
+Zadanie 4 mult 3 3
+LET mult n m = issero n -> 0 | add m (mult (pre n) m)
+LET add = λmnfx.mf(nfx)
+
+mult 3 3 = iszero 3 -> 0 | add 3 (mult (pre 3) 3) = add 3 (mult 2 3) = add 3 6 = 9
+mult 2 3 = iszero 2 -> 0 | add 3 (mult (pre 2) 3) = add 3 (mult 1 3) = add 3 3 = 6
+mult 1 3 = iszero 1 -> 0 | add 3 (mult (pre 1) 3) = add 3 (mult 0 3) = add 3 0 = 3
+mult 0 3 = iszero 0 -> 0 | add 3 (mult (pre 0) 3) = 0
+
+
+Zadanie 5 (λzfa.zf(fa))(λgc.gc)
+(λzfa.zf(fa))(λgc.gc) = λfz.(λgc.gc)f(fa) = λfz.(λc. fc)(fa) = λfz.f(fa)
+
+Zadanie 6 (λa.a(λb.F)T)(λgc.g(gc))
+(λa.a(λb.F)T)(λgc.g(gc)) = (λa.aF) (λgc.g(gc)) = (λgc.g(gc)) F = (λc.F(Fc)) = λc. F -> F |c = λc.c
+
+Zadanie 7 fst ( snd [[a,b],[c,d]] )
+Let fst = λp.p T
+LET snd  = λp.pF
+LET [E1, E2] = λf.f E1 E2
+
+fst ( snd [[a,b],[c,d]] ) = fst ([c, d]) = c
+snd [[a,b],[c,d]] = (λp.pF)[[a,b],[c,d]] = [[a,b],[c,d]]F =  (λf.f [a,b] [c, d]) F = F [a, b] [c, d] = [c,d]
+fst ([c, d]) = (λp.p T) [c, d] = [c, d] T = (λf.f c d) T = T c d = c
+
+Zadanie 8 iszero 1
+LET iszero = λn.n(λx.F)T
+LET 1 = λfx.fx
+iszero 1 = (λn.n(λx.F)T)1 = 1 (λx. F) T = (λfx.fx)(λx. F) T = (λx.(λx. F)x) 1 = (λx. F)x
+
+
+Zadanie 9 not (not T)
+LET not = λz.z F T
+
+not (not T) = not ((λz.z F T)T) = not (T T F) = not (F) = (λz.z F T) F = F F T = T
+
+Zadanie 10 (a (λb.x b))[λa.b a/x]
+(a (λb.x b))[λa.b a/x] = a λf.((λa.ba)f)
+a[λa.b a/x] = a
+(λb.x b)[λa.ba/x] = λf.(xb)[f/b][λa.ba/x] = λf.(xf)[λa.ba/x] = λf.((λa.ba)f)

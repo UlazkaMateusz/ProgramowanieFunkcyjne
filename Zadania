@@ -1,0 +1,73 @@
+1. suc 0
+LET suc = λnfx.nf(fx)
+LET 0 = λfx.x
+LET 1 = λfx.fx
+
+(λnfx.nf(fx) 0) -> λfx.0f(fx) -> λfx.(λfx.x)f(fx) -> λfx.(λx.x)(fx) -> λfx.fx
+
+2. suc 1
+LET suc = λnfx.nf(fx)
+LET 1 = λfx.fx
+LET 2 = λfx.f(fx)
+
+(λnfx.nf(fx) λfx.fx) -> λfx.(λfx.fx)f(fx) -> λfx.(λx.fx)(fx) -> λfx.f(fx)
+
+3. add 0 0 
+LET add = λmnfx.mf(nfx)
+LET 0 = λfx.x
+
+add 0 0 -> λmnfx.mf(nfx) 0 0 -> λfx.0f(0fx) -> λfx.0fx -> λfx.x
+
+4. add 1 2
+LET add = λmnfx.mf(nfx)
+LET 1 = λfx.fx
+LET 2 = λfx.f(fx)
+LET 3 = λfx.f(f(fx))
+
+add 1 2 -> λmnfx.mf(nfx) 1 2 -> λfx.1f(2fx) -> λfx.(λfx.fx)f(2fx) -> λfx.(λx.fx)(2fx) -> λfx.f(2fx) -> λfx.f ((λfx.f(fx))fx) -> λfx.f(f(fx))
+
+5. add 2 0
+LET add = λmnfx.mf(nfx)
+LET 0 = λfx.x
+LET 2 = λfx.f(fx)
+
+add 2 0 -> λmnfx.mf(nfx) 2 0 ->  λfx.2f(0fx) -> λfx.2fx -> λfx.(λfx.f(fx))fx -> λfx.f(fx)
+
+6. add 2 (succ 1)
+LET add = λmnfx.mf(nfx)
+LET suc = λnfx.nf(fx)
+LET 1 = λfx.fx
+LET 2 = λfx.f(fx)
+LET 4 = λfx.f(f(f(fx)))
+
+add 2 (succ 1) -> λmnfx.mf(nfx) 2 (succ 1) -> λfx.2f((succ 1)fx) -> λfx.(λfx.f(fx))f((succ 1)fx) -> λfx.(λx.f(fx))((succ 1) fx) -> λfx.(λx.f(fx))((λfx.1f(fx))fx) -> λfx.f(f(((λfx.1f(fx))fx))) -> λfx.f(f(1f(fx))) 
+-> λfx.f(f((λfx.fx)f(fx))) -> λfx.f(f((λx.fx)(fx))) -> λfx.f(f(f(fx)))
+
+7. add (succ 0) (succ 1)
+LET add = λmnfx.mf(nfx)
+LET suc = λnfx.nf(fx)
+LET 0 = λfx.x
+LET 1 = λfx.fx
+LET 2 = λfx.f(fx)
+
+add (succ 0) (succ 1) ->  add (λnfx.nf(fx) 0) (λnfx.nf(fx) 1) -> add (λfx.0f(fx)) (λfx.1f(fx)) -> add (λfx.fx) (λfx.(λfx.fx)f(fx)) -> add 1 (λfx.f(fx)) -> add 1 2 -> Z zadania 4 -> λfx.f(f(fx ))
+
+8. snd [E1, E2] = E2
+LET (E1, E2) = λf.f E1 E2
+LET snd  = λp.pF
+
+snd [E1, E2] -> snd (λf.f E1 E2) -> (λp.pF)(λf.f E1 E2) -> (λf.f E1 E2)F -> F E1 E2 -> E2
+
+9. Uzasadnić, że pierwszym elementem pary [X,Y] jest X.
+LET (X, Y) = λf.f X Y
+Let fst = λp.p T
+
+fst [X, Y] -> fst (λf.f X Y) -> (λp.pT)(λf.f X Y) ->(λf.f X Y) T -> T X Y -> X
+
+10.  fst ( snd [A,[B,C]] ).
+LET (X, Y) = λf.f X Y
+Let fst = λp.p T
+LET snd  = λp.pF
+
+fst(snd[A, [B,C]]) -> fst((λp.pF)([A, [B, C]])) -> fst((λp.pF) (λf.f A (λg.g B C))) -> fst(λf. f A (λg.g B C) F) -> fst (λg.g B C) -> (λp.p T)(λg.g B C) -> (λg.g B C)T -> T B C -> B
+
