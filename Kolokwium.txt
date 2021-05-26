@@ -1,0 +1,45 @@
+Zadanie 1.
+a. Zmienna
+b. Aplikacja
+c. Aplikacja
+d. Abstracja
+
+Zadanie 2 
+LET oper = λxy.yFx
+
+oper FF = (λxy.yFx) F F (Beta redukcja)= F F F (if then else) = F
+oper FT = (λxy.yFx) F T (Beta redukcja)= T F F (if then else) = F
+oper TF = (λxy.yFx) T F (Beta redukcja)= F F T (if then else) = T
+oper TT = (λxy.yFx) T T (Beta redukcja)= T F T (if then else) = F
+
+Zadanie 3.
+a. (λu2.(u2T(λu1u2.u2)))(λu1u2.u2) (Beta redukcja)= (λu1u2.u2)T(λu1u2.u2) (Beta redukcja)
+= (λu2.u2)(λu1u2.u2) (Beta redukcja)= λu1u2.u2
+
+b. (λu2.(u2 T (λu1u2.u2)))T = (Beta redukcja) T T (λu1u2.u2) = (if then else) = T
+
+Zadanie 4.
+a. (λu2u1u6.((u1 u1)(u1 u7 u0))) = (λu2.(λu1.(λu6.((u1 u1)((u1 u7) u0)))))
+b. (u0 u1 u5 u3) = (((u0 u1) u5) u3)
+c. (λu2. ((u1 u1)(u1 u7)))
+d. (λu0u2.u0) = (λu0.(λu2.u0))
+
+Zadanie 5.
+a. mult 1 39 = iszero 1 -> 0 | add 39 (mult (pre 1) 39) = F -> 0 | add 39 (mult 0 39) = add 39 (mult 0 39) = add 39 0 = 39
+
+mult 0 39 = iszero 0 -> 0 | add 39 (mult (pre 0 ) 39) = T -> 0 | add 39 (mult (pre 0 ) 39) = 0
+
+b. mult 2 33 = iszero 2 -> 0 | add 33 (mult (pre 2) 33) = F -> 0 | add 33 (mult (pre 2) 33) = add 33 (mult 1 33) = add 33 33 = 66
+mult 1 33 = iszero 1 -> 0 | add 33 (mult (pre 1) 33) = F -> 0 | add 33 (mult (pre 1) 33) = add 33 (mult 0 33) = add 33 0 = 33
+mult 0 33 = iszero 0 -> 0 | add 33 (mult (pre 0) 33) = T -> 0 | add 33 (mult (pre 0) 33) = 0
+
+c. add 2 2 = (λmnfx.mf(nfx)) 2 2 = λfx.2f(2fx) = λfx.2f( (λfx.f(fx)) fx ) = λfx.2f(f(fx)) = λfx.(λfx.f(fx))f(f(fx)) = λfx.(λx.f(fx)) (f(fx)) = λfx.f(f(f(fx))) = 4
+
+Zadanie 6.
+a. Związane u0  Wolne brak
+b. Związane u2  Wolne u1 u7
+c. (λu0.u0) Związane u0 Wolne Brak
+    (λu2.u0) Związane brak Wolne u0
+
+d. (λu5.u5u2) Związane u5   Wolne u2
+    u1 u5 Związane brak Wolne u1 u5
